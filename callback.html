@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dark Verdict - Auth</title>
+<style>body{background:#08080c;color:#eee;font-family:Arial,sans-serif;max-width:760px;margin:0 auto;padding:48px 24px;line-height:1.6;text-align:center}h1{color:#fff}code{display:block;background:#1a1a22;color:#ff6b6b;padding:18px;border-radius:8px;word-break:break-all;font-size:15px;margin:20px 0}button{background:#b40000;color:#fff;border:0;padding:12px 24px;border-radius:8px;font-size:16px;cursor:pointer}</style></head>
+<body><h1>Dark Verdict - Autorizacion</h1>
+<p id="msg">Leyendo codigo...</p>
+<code id="code"></code>
+<button onclick="navigator.clipboard.writeText(document.getElementById('code').innerText);this.innerText='Copiado!'">Copiar codigo</button>
+<p style="color:#888;font-size:13px">Copia este codigo y pegaselo a Claude.</p>
+<script>
+var p=new URLSearchParams(window.location.search);
+var code=p.get('code');var err=p.get('error');
+if(code){document.getElementById('msg').innerText='Listo! Copia este codigo:';document.getElementById('code').innerText=code;}
+else{document.getElementById('msg').innerText='Error: '+(err||'no se recibio codigo');}
+</script></body></html>
